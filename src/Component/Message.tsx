@@ -27,7 +27,7 @@ class ConsoleMessage extends React.Component<MessageProps, any> {
       <ThemeProvider theme={this.theme}>
         <Message data-method={log.method}>
           {log.amount > 1 ? <AmountIcon>{log.amount}</AmountIcon> : <Icon />}
-          {log.timestamp ? <Timestamp>{log.timestamp}</Timestamp> : <span/>}
+          {log.timestamp ? <Timestamp>{log.timestamp}</Timestamp> : <span />}
           <Content>{this.getNode()}</Content>
         </Message>
       </ThemeProvider>
@@ -42,7 +42,11 @@ class ConsoleMessage extends React.Component<MessageProps, any> {
     if (error) return error
 
     // Chrome formatting
-    if (log.data.length > 0 && typeof log.data[0] === 'string') {
+    if (
+      log.data.length > 0 &&
+      typeof log.data[0] === 'string' &&
+      log.method !== 'rawHTML'
+    ) {
       const matchLength = log.data[0].match(reSubstitutions)?.length
       if (matchLength) {
         const restData = log.data.slice(1 + matchLength)

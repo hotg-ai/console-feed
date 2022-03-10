@@ -130,6 +130,7 @@ it('allows all types methods', () => {
         { method: 'assert', id: 'id', data: [] },
         { method: 'result', id: 'id', data: [] },
         { method: 'command', id: 'id', data: [] },
+        { method: 'rawHTML', id: 'id', data: [] },
       ]}
     />
   )

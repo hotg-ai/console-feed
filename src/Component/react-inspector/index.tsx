@@ -38,6 +38,7 @@ class CustomInspector extends React.PureComponent<Props, any> {
 
     const dom = data instanceof HTMLElement
     const table = method === 'table'
+    const rawHTML = method === 'rawHTML'
 
     return (
       <Root data-type={table ? 'table' : dom ? 'html' : 'object'}>
@@ -50,6 +51,8 @@ class CustomInspector extends React.PureComponent<Props, any> {
           <HTML>
             <DOMInspector {...this.props} theme={styles} />
           </HTML>
+        ) : rawHTML ? (
+          <div dangerouslySetInnerHTML={{ __html: data }} />
         ) : (
           <Inspector
             {...this.props}

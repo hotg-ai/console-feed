@@ -20,7 +20,7 @@ class ObjectTree extends React.PureComponent<Props, any> {
     const { theme, quoted, log } = this.props
 
     return log.data.map((message: any, i: number) => {
-      if (typeof message === 'string') {
+      if (typeof message === 'string' && log.method !== 'rawHTML') {
         const string =
           !quoted && message.length ? (
             `${message} `
