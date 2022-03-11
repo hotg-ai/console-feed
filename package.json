@@ -1,8 +1,8 @@
 {
   "name": "console-feed",
   "version": "3.3.0",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "description": "A React component that displays console logs from the current page, an iframe or transported across a server",
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json --declaration && for file in src/**/*.d.ts; do cp $file ${file/src/lib}; done",
