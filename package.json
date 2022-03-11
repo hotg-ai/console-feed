@@ -1,7 +1,7 @@
 {
   "name": "console-feed",
   "version": "3.3.0",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "types": "src/index.d.ts",
   "description": "A React component that displays console logs from the current page, an iframe or transported across a server",
   "scripts": {
